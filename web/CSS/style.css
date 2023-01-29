@@ -67,7 +67,13 @@ body {
     font-size: 60px;
     font-weight: normal;
 }
+.page1_area h2{
+    text-align: center;
+}
+.page1_area img{
+    width: 90px;
+}
 .page4_area img{
     width:100%;
-    margin-top:48px;
+    margin-top:450px;
 }
