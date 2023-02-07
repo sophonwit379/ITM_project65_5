@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- icon= -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+    <div class="section home">
+        <div class="navbar">
+            <div class="nav_logo">
+                <a href="#"><img src="img/logo.png" alt=""> </a>
+                <a href="#">SLR <span>Project</span></a>
+            </div>
+            <ul class="nav">
+
+                <li><a href="index.html">หน้าหลัก</a></li>
+                <li><a href="about.html">เกี่ยวกับ</a></li>
+                <li><a href="team.html">ทีมผู้พัฒนา</a></li>
+                <li><a href="ai.html">ผลงานของเรา</a></li>
+
+            </ul>
+
+        </div>
+        <div class="popup" id="popup-1">
+            <div class="overlay"></div>
+            <div class="content">
+                <div class="close-btn" onclick="togglePopup()">&times;</div>
+                <h1>คู่มือการใช้งาน</h1>
+                <div class="pop-top">
+                    <h2>การใช้ AI</h2>
+                    <h4>- กดที่ปุ่มเริ่มใช้งานเปิดกล้องและรอ Ai ประมวลผล</h4>
+                    <h2>การค้นหาคลิป</h2>
+                    <h4>- พิมพ์คำที่ต้องการค้นหาและจะมีผลลัพธ์ขึ้นมา</h4>
+                    <h2>ข้อควรระวัง</h2>
+                    <h4>- คำที่ค้นหา ต้องเป็นคำกริยาเท่านั้นเนื่องจากยังไม่รับรองรับประโยค</h4>
+                </div>
+              
+
+
+
+
+            </div>
+        </div>
+        <div class="home_main">
+            <div class="home_text">
+                <h2>SLR language</h2>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;การสื่อสารเป็นปัจจัยสำคัญในการดำรงชีวิต
+                    แต่ยังมีข้อจำกัดสำหรับคนหุหนวกและคนใบ้
+                    เนื่องจากคนหูหนวกจะไม่สามารถได้ยินสิ่งที่คนทั่วไปพูดออกมาได้
+                    เลยต้องใช้ภาษามือในการสื่อสารเช่นเดียวกับคนใบ้ เราจึงออกแบบเว็บเพื่อช่วยให้การสื่อสารง่ายขึ้น</p>
+
+            </div>
+            <div class="home_buttom">
+                <a href="ai.html">
+                    <button class="button-32">ทดลองใช้งาน</button>
+
+                </a>
+
+                <button class="button-32" onclick="togglePopup()">คู่มือการใช้งาน</button>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
