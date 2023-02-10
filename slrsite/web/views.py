@@ -8,6 +8,3 @@ def About(request):
 
 def Team(request):
     return render(request,'team.html')
-
-def Ai(request):
-    return render(request,'ai.html')
