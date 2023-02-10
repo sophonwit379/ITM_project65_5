@@ -17,7 +17,7 @@
 
 .home {
 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.01)), url(img/backgroud.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.01)), url(backgroud.jpg);
     background-position: center;
     background-size: cover;
     /* z-index: 1; */
