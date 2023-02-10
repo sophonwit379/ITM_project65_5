@@ -1,3 +1,4 @@
+<!-- import to use static -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -8,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- css -->
+    <!-- like to static style.css-->
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
     <!-- font -->
@@ -32,11 +34,11 @@
                 <a href="#">SLR <span>Project</span></a>
             </div>
             <ul class="nav">
-
-                <li><a href="index.html">หน้าหลัก</a></li>
-                <li><a href="about.html">เกี่ยวกับ</a></li>
-                <li><a href="team.html">ทีมผู้พัฒนา</a></li>
-                <li><a href="ai.html">ผลงานของเรา</a></li>
+                <!--  url 'name in path home/urls.py ' -->
+                <li><a href="{% url 'index' %}">หน้าหลัก</a></li>
+                <li><a href="{% url 'about' %}">เกี่ยวกับ</a></li>
+                <li><a href="{% url 'team' %}">ทีมผู้พัฒนา</a></li>
+                <li><a href="{% url 'ai' %}">ผลงานของเรา</a></li>
 
             </ul>
 
@@ -82,7 +84,7 @@
         </div>
     </div>
 
-
+        <!-- like to static script.js-->
     <script src="{% static 'script.js' %}"></script>
 </body>
 

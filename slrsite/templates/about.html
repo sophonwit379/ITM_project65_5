@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- css -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,15 +26,15 @@
 <body>
     <div class="navbar">
         <div class="nav_logo">
-            <a href="#"><img src="img/logo.png" alt=""> </a>
+            <a href="#"><img src="{% static 'logo.png' %}" alt=""> </a>
             <a href="#">SLR <span>Project</span></a>
         </div>
         <ul class="nav">
 
-            <li><a href="index.html">หน้าหลัก</a></li>
-            <li><a href="about.html">เกี่ยวกับ</a></li>
-            <li><a href="team.html">ทีมผู้พัฒนา</a></li>
-            <li><a href="#">ผลงานของเรา</a></li>
+            <li><a href="{% url 'index' %}">หน้าหลัก</a></li>
+            <li><a href="{% url 'about' %}">เกี่ยวกับ</a></li>
+            <li><a href="{% url 'team' %}">ทีมผู้พัฒนา</a></li>
+            <li><a href="{% url 'ai' %}">ผลงานของเรา</a></li>
 
         </ul>
 
@@ -53,7 +54,7 @@
                 <h4>- Ai ไม่รองรับการประมวลด้วยสีหน้า</h4>
             </div>
             <div class="about-main-right">
-                <img src="img/about.png" alt="">
+                <img src="{% static 'about.png' %}" alt="">
             </div>
         </div>
 
