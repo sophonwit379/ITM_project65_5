@@ -30,12 +30,13 @@
         <div class="ai-top">
             <div class="top-left">
                 <div class="frame">
-
+                    <p id="wait" ></p>
+                    <img id="demo" src="{% static 'camera-off.svg' %}" alt="stream">
                 </div>
             </div>
             <div class="top-right">
-                <button class="button-32">กดเพื่อใช้งาน</button>
-                
+                <button class="button-32" onclick="video_on()">on</button>
+                <button class="button-32" onclick="video_off()">off</button>
 
                 <div class="ai-result">ผลลัพธ์คือ :</div>
             </div>
@@ -60,8 +61,22 @@
         <a href="{% url 'index' %}"><button class="button-32">กลับสู่เว็บไซค์</button></a>
         
     </div>
-
-
+    <script>
+        function video_on() {
+          document.getElementById("demo").src = "{% url 'stream' %}";
+          document.getElementById("wait").innerHTML = "Turning on. . . . .";
+          setTimeout(showText, 3000);
+        
+        }
+        function showText(){
+          document.getElementById("wait").innerHTML = "Done";
+        }
+        
+        function video_off() {
+          document.getElementById("demo").src = "{% static 'camera-off.svg' %}";
+          document.getElementById("wait").innerHTML = "Turned off";
+        }
+        </script>
 </body>
 
 </html>
