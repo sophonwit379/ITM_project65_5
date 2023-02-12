@@ -24,40 +24,46 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+    <div class="navbar">
+        <div class="nav_logo">
+            <a href="#"><img src="{% static 'logo.png' %}" alt=""> </a>
+            <a href="#">SLR <span>Project</span></a>
+        </div>
+        <div class="search_box">
+            <input type="search" placeholder="Search here">
+            <span class="fa fa-search"></span>
+        </div>
+        <ul class="nav">
+            <!--  url 'name in path home/urls.py ' -->
+            <li><a href="{% url 'index' %}">หน้าหลัก</a></li>
+            <li><a href="{% url 'about' %}">เกี่ยวกับ</a></li>
+            <li><a href="{% url 'team' %}">ทีมผู้พัฒนา</a></li>
+            <li><a href="{% url 'ai' %}">ผลงานของเรา</a></li>
+
+        </ul>
+
+    </div>
     <div class="section ai">
         <h1>SLR language</h1>
         <div class="ai-top">
             <div class="top-left">
+                <h1 id="wait" >กล้องปิดการใช้งาน</h1>
                 <div class="frame">
-                    <p id="wait" ></p>
                     <img id="demo" src="{% static 'camera-off.svg' %}" alt="stream">
                 </div>
             </div>
-            <div class="top-right">
-                <button class="button-32" onclick="video_on()">on</button>
-                <button class="button-32" onclick="video_off()">off</button>
+            <div class="top-right" id ='top-right'>
+                <div class="btnnn">
+                    <button class="button-ai" onclick="video_on()">เปิดกล้อง</button>
+                    <button class="button-ai" onclick="video_off()">ปิดกล้อง</button>
+
+                </div>
                 <div class="result">ผลลัพธ์คือ : </div>
                 <div id="data"></div>
             </div>
         </div>
-        <div class="ai-bot">
-            <div class="bot-left">
-                <h1>ค้นหา</h1>
-	
-                <div class="SearchBox">
-                    <input type="text" class="SearchBox-input" placeholder="คำที่ต้องการค้นหา.">
-                
-                        <button class="SearchBox-button">
-                            <i class="SearchBox-icon  material-icons">search</i>
-                        </button>
-                    
-                </div> 
-            </div>
-            <div class="bot-right">
-                <div class="frame"></div>
-            </div>
-        </div>
-        <a href="{% url 'index' %}"><button class="button-32">กลับสู่เว็บไซค์</button></a>
+
+        <!-- <a href="{% url 'index' %}"><button class="button-32">กลับสู่เว็บไซค์</button></a> -->
         
     </div>
     <script>
@@ -65,7 +71,7 @@
         function video_on() {
           status=1
           document.getElementById("demo").src = "{% url 'stream' %}";
-          document.getElementById("wait").innerHTML = "Turning on. . . . .";
+          document.getElementById("wait").innerHTML = "กำลังเปิดกล้อง. . . . .";
           document.getElementById("data").innerHTML =null;
           setInterval(function(){
             $.ajax({
@@ -83,7 +89,7 @@
           setTimeout(showText, 3000);
         }
         function showText(){
-          document.getElementById("wait").innerHTML = "Done";
+          document.getElementById("wait").innerHTML = "กล้องกำลังเปิด";
         }
         function video_off() {
           status=0

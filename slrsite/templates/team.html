@@ -29,8 +29,12 @@
             <a href="#"><img src="{% static 'logo.png' %}" alt=""> </a>
             <a href="#">SLR <span>Project</span></a>
         </div>
+        <div class="search_box">
+            <input type="search" placeholder="Search here">
+            <span class="fa fa-search"></span>
+        </div>
         <ul class="nav">
-
+            <!--  url 'name in path home/urls.py ' -->
             <li><a href="{% url 'index' %}">หน้าหลัก</a></li>
             <li><a href="{% url 'about' %}">เกี่ยวกับ</a></li>
             <li><a href="{% url 'team' %}">ทีมผู้พัฒนา</a></li>
@@ -40,52 +44,75 @@
 
     </div>
     <div class="section team">
-        
+
         <h1>ทีมผู้พัฒนา</h1>
         <div class="team_top">
             <div class="card_top">
-                <img src="{% static 'S__30720008.jpg' %}">
-                <h2>นายณัฐวุฒิ รอดเลิศ</h2>
+                <img src="{% static 'IMG_4801.jpg' %}">
+                <h2>อลิสา กระจ่างแจ่ม</h2>
                 <h4>
                     ผู้จัดการโครงการ</h4>
-                <i class="fa-solid fa-envelope"></i>
-                <i class="fab fa-github"></i>
-                <i class="fab fa-github"></i>
+                <a href="alisa.kaj@ku.th"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/NewAlisa" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+
 
             </div>
             <div class="card_top">
-                <img src="{% static 'S__30720008.jpg' %}">
-                <h2>Nattawut</h2>
+                <img src="{% static 'S__30720011.jpg' %}">
+                <h2>นาย โสภณวิชญ์ ควันไชย</h2>
                 <h4>นักพัฒนา</h4>
-                <i class="fa-solid fa-envelope"></i>
-                <i class="fab fa-github"></i>
+                <a href="sophonwit.k@ku.th">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://github.com/sophonwit379"target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
 
             </div>
             <div class="card_top">
                 <img src="{% static 'S__30720008.jpg' %}">
-                <h2>Nattawut</h2>
-                <h4>ผู้สนับสนุน</h4>
-                <i class="fa-solid fa-envelope"></i>
-                <i class="fab fa-github"></i>
+                <h2>ณัฐวุฒิ รอดเลิศ</h2>
+                <h4>นักพัฒนา</h4>
+
+                <a href="nattawut.rod@ku.th">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://github.com/ntwww">
+                    <i class="fab fa-github"></i>
+                </a>
 
             </div>
         </div>
         <div class="team_bot">
             <div class="card_bot">
-                <img src="{% static 'S__30720008.jpg' %}">
-                <h2>Nattawut</h2>
-                <i class="fa-solid fa-envelope"></i>
-                <i class="fab fa-github"></i>
-                <i class="fab fa-github"></i>
+                <img src="{% static 'S__30720010.jpg' %}">
+                <h2>เกริก กลมเกลี้ยง</h2>
+
+                <h4>นักพัฒนา</h4>
+                <a href="krirk.k@ku.th">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://github.com/ziedshiro">
+                    <i class="fab fa-github"></i>
+                </a>
 
 
 
             </div>
             <div class="card_bot">
-                <img src="{% static 'S__30720008.jpg' %}">
-                <h2>Nattawut</h2>
-                <i class="fa-solid fa-envelope"></i>
-                <i class="fab fa-github"></i>
+                <img src="{% static 'IMG_5161.jpg' %}">
+                <h2>อัคมาลริซาล รัมลี
+                </h2>
+                <h4>ผู้สนับสนุน</h4>
+
+                <a href="akmanrisal.r@ku.th">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="https://github.com/smanmonet">
+                    <i class="fab fa-github"></i>
+                </a>
             </div>
 
         </div>

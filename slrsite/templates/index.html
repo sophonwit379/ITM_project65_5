@@ -33,12 +33,17 @@
                 <a href="#"><img src="{% static 'logo.png' %}" alt=""> </a>
                 <a href="#">SLR <span>Project</span></a>
             </div>
+            <div class="search_box">
+                <input type="search" placeholder="Search here">
+                <span class="fa fa-search"></span>
+            </div>
             <ul class="nav">
                 <!--  url 'name in path home/urls.py ' -->
                 <li><a href="{% url 'index' %}">หน้าหลัก</a></li>
                 <li><a href="{% url 'about' %}">เกี่ยวกับ</a></li>
                 <li><a href="{% url 'team' %}">ทีมผู้พัฒนา</a></li>
                 <li><a href="{% url 'ai' %}">ผลงานของเรา</a></li>
+                <li><a href="{% url 'search' %}">ssdsdsds</a></li>
 
             </ul>
 

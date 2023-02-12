@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Search</title>
     <!-- css -->
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
@@ -39,30 +39,17 @@
             <li><a href="{% url 'about' %}">เกี่ยวกับ</a></li>
             <li><a href="{% url 'team' %}">ทีมผู้พัฒนา</a></li>
             <li><a href="{% url 'ai' %}">ผลงานของเรา</a></li>
+            <li><a href="{% url 'search' %}">ssdsdsds</a></li>
 
         </ul>
 
     </div>
-    <div class="section about">
-        <h1>เกี่ยวกับเรา</h1>
-        <div class="about-main">
-            <div class="about-main-left">
-                <h2>จุดประสงค์</h2>
-                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;เนื่องจากพวกเราเล็งเห็นถึงปัญหาของการสื่อสารด้วยภาษามือในปัจจุบัน
-                    อาจจะมีกลุ่มคนบางกลุ่มที่ยังไม่เข้าใจและยังไม่สามารถใช้ในการสื่อสารได้พวกเราจึงสร้างเว็บนี้ขึ้นมา
-                    ที่รองรับ Ai ใช้ในการประมวลผลวิดิโอแบบเรียลไทม์และยังสามารถค้นหาวิดิโอเพื่อแสดงผลมาบนเว็บ
-                    เพื่อทำให้กลุ่มคนทั่วไปบุคคลหูหนวก และบุลคลใบ้สามารถสื่อสารกันง่ายขึ้น</p>
-                <h2>ข้อจำกัด</h2>
-                <h4>- คำในการค้นหาไม่สามารถเป็นประโยคได้ สามารถค้นหาแป็นคำเท่านั้น</h4>
-                <h4>- Ai ไม่รองรับการประมวลด้วยสีหน้า</h4>
-            </div>
-            <div class="about-main-right">
-                <img src="{% static 'about.png' %}" alt="">
+    <div class="section find">
+        <div class="main">
+            <div class="card">
             </div>
         </div>
-
     </div>
-
 </body>
 
 </html>

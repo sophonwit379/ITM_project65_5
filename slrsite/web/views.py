@@ -15,6 +15,9 @@ def Team(request):
 def Ai(request):
     return render(request,'ai.html')
 
+def Search(request):
+    return render(request,'search.html')
+
 def get_data(request):
     data = getAns()
     return JsonResponse({'data':data})
