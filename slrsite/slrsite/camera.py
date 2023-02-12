@@ -7,6 +7,13 @@ from keras.models import Sequential
 from keras.layers import LSTM, Dense
 import tensorflow as tf
 
+ans=[]
+def setAns(x):
+    global ans
+    ans=x
+
+def getAns():
+    return ans
 # basically take camera input and convert it into a cv object
 # later to be processed by gen()
 def gen():
@@ -36,7 +43,8 @@ def gen():
             
             if len(sequence) == 30:
                 res = model.predict(np.expand_dims(sequence, axis=0))[0]
-                print(actions[np.argmax(res)])
+                #setAns(actions[np.argmax(res)])
+                #print(actions[np.argmax(res)])
                 predictions.append(np.argmax(res))
                 
                 
@@ -54,11 +62,11 @@ def gen():
                     sentence = sentence[-5:]
 
                 # Viz probabilities
-                image = prob_viz(res, actions, image, color)
+                #image = prob_viz(res, actions, image, color)
                 
-            cv2.rectangle(image, (0,0), (640, 40), (245, 117, 16), -1)
-            cv2.putText(image, ' '.join(sentence), (3,30), 
-                        cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+            #cv2.rectangle(image, (0,0), (640, 40), (245, 117, 16), -1)
+            cv2.putText(image, ' '.join(sentence), (3,30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+            setAns(sentence)
             #frame = camera.get_frame()
             frame = cv2.imencode('.jpg', image)[1].tobytes()
             yield (b'--frame\r\n'
@@ -118,11 +126,11 @@ model.add(Dense(32, activation='relu'))
 model.add(Dense(actions.shape[0], activation='softmax'))
 model.load_weights('action.h5')
 
-color = (245,117,16)
-def prob_viz(res, actions, input_frame, color):
-    output_frame = input_frame.copy()
-    for num, prob in enumerate(res):
-        cv2.rectangle(output_frame, (0,60+num*40), (int(prob*100), 90+num*40), color, -1)
-        cv2.putText(output_frame, actions[num], (0, 85+num*40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2, cv2.LINE_AA)
+# color = (245,117,16)
+# def prob_viz(res, actions, input_frame, color):
+#     output_frame = input_frame.copy()
+#     for num, prob in enumerate(res):
+#         cv2.rectangle(output_frame, (0,60+num*40), (int(prob*100), 90+num*40), color, -1)
+#         cv2.putText(output_frame, actions[num], (0, 85+num*40), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255), 2, cv2.LINE_AA)
         
-    return output_frame
+#     return output_frame

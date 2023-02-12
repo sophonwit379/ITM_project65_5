@@ -21,11 +21,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-
 <body>
     <div class="section ai">
-        
         <h1>SLR language</h1>
         <div class="ai-top">
             <div class="top-left">
@@ -37,8 +36,8 @@
             <div class="top-right">
                 <button class="button-32" onclick="video_on()">on</button>
                 <button class="button-32" onclick="video_off()">off</button>
-
-                <div class="ai-result">ผลลัพธ์คือ :</div>
+                <div class="result">ผลลัพธ์คือ : </div>
+                <div id="data"></div>
             </div>
         </div>
         <div class="ai-bot">
@@ -62,21 +61,37 @@
         
     </div>
     <script>
+        var status=0
         function video_on() {
+          status=1
           document.getElementById("demo").src = "{% url 'stream' %}";
           document.getElementById("wait").innerHTML = "Turning on. . . . .";
+          document.getElementById("data").innerHTML =null;
+          setInterval(function(){
+            $.ajax({
+            type:"GET",
+            url: "ai/",
+            })
+            .done(Response =>{
+            const data=Response    
+            if(status==0){
+                data=null
+            }
+            document.getElementById("data").innerHTML =data['data']; 
+            })
+        },1000)
           setTimeout(showText, 3000);
-        
         }
         function showText(){
           document.getElementById("wait").innerHTML = "Done";
         }
-        
         function video_off() {
+          status=0
           document.getElementById("demo").src = "{% static 'camera-off.svg' %}";
           document.getElementById("wait").innerHTML = "Turned off";
+          document.getElementById("data").innerHTML =null;
         }
+        
         </script>
 </body>
-
 </html>
