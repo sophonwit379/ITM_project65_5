@@ -26,8 +26,8 @@
 <body>
     <div class="navbar">
         <div class="nav_logo">
-            <a href="#"><img src="{% static 'logo.png' %}" alt=""> </a>
-            <a href="#">SLR <span>Project</span></a>
+            <a href="{% url 'index' %}"><img src="{% static 'logo.png' %}" alt=""> </a>
+            <a href="{% url 'index' %}">SLR <span>Project</span></a>
         </div>
         <div class="search_box">
             <input type="search" placeholder="Search here">
@@ -39,6 +39,7 @@
             <li><a href="{% url 'about' %}">เกี่ยวกับ</a></li>
             <li><a href="{% url 'team' %}">ทีมผู้พัฒนา</a></li>
             <li><a href="{% url 'ai' %}">ผลงานของเรา</a></li>
+            <li><a href="{% url 'action' %}">ท่าภาษามือ</a></li>
 
         </ul>
 

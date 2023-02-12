@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import StreamingHttpResponse,JsonResponse
 from slrsite.camera import gen,getAns
-
+from slrsite.actionModel import getAll,find
 
 def Index(request):
     return render(request,'index.html')
@@ -15,9 +15,18 @@ def Team(request):
 def Ai(request):
     return render(request,'ai.html')
 
-def Search(request):
-    return render(request,'search.html')
+def Action(request):
+    action=getAll()
+    return render(request,'action.html',{'action':action})
 
+def Search(request):
+        # create a form instance and populate it with data from the request:
+
+    #if request.method=='POST':
+    search=request.GET['search']
+    action=find(search)
+    return render(request,'search.html',{'action':action})
+    #return render(request,'search.html')
 def get_data(request):
     data = getAns()
     return JsonResponse({'data':data})

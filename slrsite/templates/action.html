@@ -21,6 +21,70 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            h3{
+                text-align:center;
+                color:black;
+                font-size:25px;
+                margin:0;
+                padding-top:10px;
+            }
+            a{
+                text-decoration:none;
+            }
+            .product{
+                display:flex;
+                flex-wrap:wrap;
+                width:100%;
+                justify-content:left;
+                align-items:center;
+                margin:50px 0;
+            }
+            .content{
+                width:20%;
+                margin:15px;
+                box-sizing:border-box;
+                float:left;
+                text-align:center;
+                border-radius:20px;
+                cursor:pointer;
+                padding-top:10px;
+                box-shadow:0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+                transition:.4s;
+                background:white;
+            }
+            .content:hover{
+                box-shadow:0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
+                transform:translate(0px,-8px);
+            }
+            p{
+                text-align:center;
+                font-size:10px; 
+                color:#b2bec3;
+                padding-top:0 8px;
+            }
+            h6{
+                text-align:center;
+                font-size:26px;
+                color:red;
+                margin:0;
+            }
+            .detail{
+                text-align:center;
+                font-size:12px;
+                font-weight: bold;
+                color:black;
+                width:50%;
+                height:80%;
+                padding:15px;
+                border:0;
+                outline:none;
+                cursor:pointer;
+                margin-top:5px;
+                margin-bottom:10px;
+                background:#fcdf7e;
+            }
+        </style>
 </head>
 
 <body>
@@ -44,12 +108,12 @@
         </ul>
     </div>
    
-    <div class="section find">
+    <div class="product">
          {% for i in action %}
-        <div class="main">
+         <div class="content">
             <div class="card">
                 <iframe width="320" height="240"
-                src={{i.url}}>
+                src="{{i.url}}">
                 </iframe>
                 <h1>{{i.action}}<h2>
             </div>
