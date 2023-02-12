@@ -100,9 +100,9 @@
     
 }
 
-.navbar .search_box span {
+.search_box button {
     color: #255FB2;
-    font-size: 20px;
+    font-size: 0px;
     background-color: #fff;
     height: 100%;
     padding: 8px;
@@ -112,7 +112,7 @@
 
 }
 
-.navbar .search_box span::after {
+ .search_box button::after {
     height: 100%;
     width: 0%;
     content: '';
@@ -125,16 +125,16 @@
 
 }
 
-.navbar .search_box span:hover::after {
+.search_box button:hover::after {
     width: 100%;
 
 
 }
 
-.navbar .search_box span:hover {
+ .search_box button:hover {
     color: #fff;
 }
-
+button#submit_sea
 .home_main {
 
     width: 460px;
@@ -360,6 +360,7 @@
     font-weight: 200;
     line-height: 27px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .popup.active .overlay {
@@ -659,6 +660,6 @@ button {
         width: 350px;
     }
 }
-.find{
-    padding: 40px 12.5%;
+.main{
+    margin: 50px 12.5%
 }

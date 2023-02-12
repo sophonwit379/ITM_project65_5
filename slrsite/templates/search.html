@@ -29,10 +29,11 @@
             <a href="{% url 'index' %}"><img src="{% static 'logo.png' %}" alt=""> </a>
             <a href="{% url 'index' %}">SLR <span>Project</span></a>
         </div>
-        <div class="search_box">
-            <input type="search" placeholder="Search here">
-            <span class="fa fa-search"></span>
-        </div>
+        <form class="search_box" action="/search" method="GET">
+            <input type="text" name="search" placeholder="Search here">
+            <button type="submit" class="fa fa-search" id="submit_search" style="font-size: 20px;color: #fff; padding: 8px; border: 1px solid white;"></button>
+
+        </form>
         <ul class="nav">
             <!--  url 'name in path home/urls.py ' -->
             <li><a href="{% url 'index' %}">หน้าหลัก</a></li>
@@ -42,6 +43,7 @@
             <li><a href="{% url 'action' %}">ท่าภาษามือ</a></li>
 
         </ul>
+
     </div>
    
     <div class="section find">
