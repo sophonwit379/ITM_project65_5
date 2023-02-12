@@ -29,7 +29,7 @@
                 margin:0;
                 padding-top:10px;
             }
-            a{
+            iframe{
                 text-decoration:none;
             }
             .product{
@@ -56,33 +56,6 @@
             .content:hover{
                 box-shadow:0 3px 6px rgba(0,0,0,0.16),0 3px 6px rgba(0,0,0,0.23);
                 transform:translate(0px,-8px);
-            }
-            p{
-                text-align:center;
-                font-size:10px; 
-                color:#b2bec3;
-                padding-top:0 8px;
-            }
-            h6{
-                text-align:center;
-                font-size:26px;
-                color:red;
-                margin:0;
-            }
-            .detail{
-                text-align:center;
-                font-size:12px;
-                font-weight: bold;
-                color:black;
-                width:50%;
-                height:80%;
-                padding:15px;
-                border:0;
-                outline:none;
-                cursor:pointer;
-                margin-top:5px;
-                margin-bottom:10px;
-                background:#fcdf7e;
             }
         </style>
 </head>
@@ -115,7 +88,7 @@
                 <iframe width="320" height="240"
                 src="{{i.url}}">
                 </iframe>
-                <h1>{{i.action}}<h2>
+                <h3>{{i.action}}<h3>
             </div>
         </div>
         {% endfor %}
