@@ -31,7 +31,8 @@
         </div>
         <form class="search_box" action="/search" method="GET">
             <input type="text" name="search" placeholder="Search here">
-            <button type="submit" class="fa fa-search" id="submit_search" style="font-size: 20px;color: #fff; padding: 8px; border: 1px solid white;"></button>
+            <button type="submit" class="fa fa-search"
+            style="font-size: 20px;color: #255FB2; padding: 8px; border: 1px solid white;"></button>
 
         </form>
         <ul class="nav">
@@ -64,7 +65,40 @@
         </div>
 
     </div>
+    <style>
+        .search_box button {
+            color: #fff;
+            font-size: 4px;
+            background-color: #fff;
+            height: 100%;
+            padding: 8px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1;
 
+        }
+
+        .search_box button::after {
+            height: 100%;
+            width: 0%;
+            content: '';
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            transition: .3s;
+
+        }
+
+        .search_box button:hover::after {
+            width: 100%;
+        }
+
+        .search_box button:hover {
+            color: #255FB2;
+        }
+    </style>
 </body>
 
 </html>

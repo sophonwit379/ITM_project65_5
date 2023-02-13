@@ -31,7 +31,8 @@
         </div>
         <form class="search_box" action="/search" method="GET">
             <input type="text" name="search" placeholder="Search here">
-            <button type="submit" class="fa fa-search" id="submit_search" style="font-size: 20px;color: #fff; padding: 8px; border: 1px solid white;"></button>
+            <button type="submit" class="fa fa-search"
+            style="font-size: 20px;color: #255FB2; padding: 8px; border: 1px solid white;"></button>
 
         </form>
         <ul class="nav">
@@ -45,20 +46,94 @@
         </ul>
 
     </div>
-   
-    <div class="section find">
-         {% for i in action %}
-        <div class="main">
-            <div class="card">
-                <iframe width="320" height="240"
-                src={{i.url}}>
-                </iframe>
-                <h1>{{i.action}}<h2>
+    <div class="section">
+
+        <div class="product">
+            {% for i in action %}
+            <div class="content">
+                <div class="card">
+                    <iframe width="320" height="240" src={{i.url}}>
+                    </iframe>
+                    <h1>{{i.action}}<h2>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-    
+    <style>
+        h3 {
+            text-align: center;
+            color: black;
+            font-size: 25px;
+            margin: 0;
+            padding-top: 10px;
+        }
+
+        iframe {
+            text-decoration: none;
+        }
+        
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            padding-top: 40px;
+            justify-content: center;
+            align-items: center;
+            
+
+        }
+
+        .content {
+            width: 20%;
+            margin: 15px;
+            box-sizing: border-box;
+            float: left;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+            padding-top: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            transition: .4s;
+            background: white;
+        }
+
+        .content:hover {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            transform: translate(0px, -8px);
+        }
+        .search_box button {
+            color: #fff;
+            font-size: 4px;
+            background-color: #fff;
+            height: 100%;
+            padding: 8px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1;
+
+        }
+        .search_box button::after {
+            height: 100%;
+            width: 0%;
+            content: '';
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            transition: .3s;
+
+        }
+
+        .search_box button:hover::after {
+            width: 100%;
+        }
+
+        .search_box button:hover {
+            color: #255FB2;
+        }
+    </style>
 </body>
 
 </html>

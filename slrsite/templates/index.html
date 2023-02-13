@@ -35,7 +35,8 @@
             </div>
             <form class="search_box" action="/search" method="GET">
                 <input type="text" name="search" placeholder="Search here">
-                <button type="submit" class="fa fa-search" id="submit_search" style="font-size: 20px;color: #fff; padding: 8px; border: 1px solid white;"></button>
+                <button type="submit" class="fa fa-search"
+                    style="font-size: 20px;color: #255FB2; padding: 8px; border: 1px solid white;"></button>
 
             </form>
             <ul class="nav">
@@ -62,36 +63,83 @@
                     <h2>ข้อควรระวัง</h2>
                     <h4>- คำที่ค้นหา ต้องเป็นคำกริยาเท่านั้นเนื่องจากยังไม่รับรองรับประโยค</h4>
                 </div>
-              
-
-
-
-
             </div>
         </div>
-        <div class="home_main">
-            <div class="home_text">
+        <div class="main-home">
+            <div class="text-home">
                 <h2>SLR language</h2>
                 <p>&nbsp;&nbsp;&nbsp;&nbsp;การสื่อสารเป็นปัจจัยสำคัญในการดำรงชีวิต
                     แต่ยังมีข้อจำกัดสำหรับคนหุหนวกและคนใบ้
                     เนื่องจากคนหูหนวกจะไม่สามารถได้ยินสิ่งที่คนทั่วไปพูดออกมาได้
                     เลยต้องใช้ภาษามือในการสื่อสารเช่นเดียวกับคนใบ้ เราจึงออกแบบเว็บเพื่อช่วยให้การสื่อสารง่ายขึ้น</p>
-
             </div>
             <div class="home_buttom">
                 <a href="{% url 'ai' %}">
-                    <button class="button-32">ทดลองใช้งาน</button>
-
-                </a>
-
+                    <button class="button-32">ทดลองใช้งาน</button></a>
                 <button class="button-32" onclick="togglePopup()">คู่มือการใช้งาน</button>
 
             </div>
         </div>
     </div>
 
-        <!-- like to static script.js-->
+    <!-- like to static script.js-->
     <script src="{% static 'script.js' %}"></script>
+    <style>
+        .main-home {
+            width: 460px;
+            height: 350px;
+            border-radius: 5px;
+            margin: 190px 13%;
+            padding: 15px;
+            background: rgb(160, 159, 172);
+            background: linear-gradient(90deg, rgba(115, 114, 125, 1) 0%, rgba(119, 119, 129, 1) 100%, rgba(0, 212, 255, 1) 100%);
+        }
+
+        .text-home h2 {
+            font-size: 40px;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .text-home p {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .search_box button {
+            color: #fff;
+            font-size: 4px;
+            background-color: #fff;
+            height: 100%;
+            padding: 8px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1;
+
+        }
+        .search_box button::after {
+            height: 100%;
+            width: 0%;
+            content: '';
+            background-color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+            transition: .3s;
+
+        }
+
+        .search_box button:hover::after {
+            width: 100%;
+        }
+
+        .search_box button:hover {
+            color: #255FB2;
+        }
+    </style>
 </body>
 
 </html>
