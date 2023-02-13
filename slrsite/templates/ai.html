@@ -71,34 +71,41 @@
     </div>
     <script>
         var status=0
+        var data1=[]
+        var data2=[]
+        time=0
         function video_on() {
           status=1
+          time=0
           document.getElementById("demo").src = "{% url 'stream' %}";
           document.getElementById("wait").innerHTML = "กำลังเปิดกล้อง. . . . .";
-          document.getElementById("data").innerHTML =null;
+
           setInterval(function(){
             $.ajax({
             type:"GET",
             url: "ai/",
             })
             .done(Response =>{
-            const data=Response    
-            if(status==0){
-                data=null
-            }
-            document.getElementById("data").innerHTML =data['data']; 
+            data1=Response
+            if(time>1){
+                if(JSON.stringify(data1) === JSON.stringify(data2)){
+                    document.getElementById("data").innerHTML =null;
+                }
+                else{
+                    document.getElementById("data").innerHTML =data1['data'];
+                }
+            } 
+            time++
             })
         },1000)
-          setTimeout(showText, 3000);
-        }
-        function showText(){
-          document.getElementById("wait").innerHTML = "กล้องกำลังเปิด";
         }
         function video_off() {
-          status=0
-          document.getElementById("demo").src = "{% static 'camera-off.svg' %}";
-          document.getElementById("wait").innerHTML = "Turned off";
-          document.getElementById("data").innerHTML =null;
+            time=0
+            status=0
+            document.getElementById("demo").src = "{% static 'camera-off.svg' %}";
+            document.getElementById("wait").innerHTML = "Turned off";
+            document.getElementById("data").innerHTML =null;
+            data2=data1
         }
         
         </script>
