@@ -46,66 +46,12 @@
         </ul>
 
     </div>
-    <div class="section">
-        {% if lens == 0 %}
-        <h2>ไม่มี</h2>
-        {% else %}
-        <div class="product">
-            {% for i in actions %}
-            <div class="content">
-                <div class="card">
-                    <iframe width="320" height="240" src={{i.url}}>
-                    </iframe>
-                    <h>{{i.action}}<h2>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %}
+        <h1>พูด</h1>
+            <p class="text"></p>
+            <button type="submit" class="control fas fa-microphone"></button>
     </div>
     <style>
-        h3 {
-            text-align: center;
-            color: black;
-            font-size: 25px;
-            margin: 0;
-            padding-top: 10px;
-        }
-
-        iframe {
-            text-decoration: none;
-        }
-        
-        .product {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            padding-top: 40px;
-            justify-content: center; */
-            align-items: center;
-            
-
-        }
-
-        .content {
-            width: 20%;
-            margin: 15px;
-            box-sizing: border-box;
-            float: left;
-            text-align: center;
-            border-radius: 20px;
-            cursor: pointer;
-            padding-top: 10px;
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-            transition: .4s;
-            background: white;
-        }
-
-        .content:hover {
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            transform: translate(0px, -8px);
-        }
-        .search_box button {
+            .search_box button {
             color: #fff;
             font-size: 4px;
             background-color: #fff;
@@ -136,7 +82,72 @@
         .search_box button:hover {
             color: #255FB2;
         }
+
     </style>
+    <script>
+        (()=>{
+            window.SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition
+            const recognition=new window.SpeechRecognition()
+            const btnElem=document.querySelector('.control')
+            function onClick(){
+                const isPausing=btnElem.classList.contains('fa-microphone')
+                if(isPausing){
+                    recognition.start()
+                    btnElem.classList.remove('fa-microphone')
+                    btnElem.classList.add('fa-microphone-slash')
+                }
+                else{
+                    recognition.stop()
+                    btnElem.classList.remove('fa-microphone-slash')
+                    btnElem.classList.add('fa-microphone')
+                }
+            }
+            function onResult(event){
+                const textElem=document.querySelector('.text')
+                const {transcript}=event.results[0][0]
+                if(transcript){
+                    window.location.href = "search?search=" + transcript;
+                }
+                console.log(transcript)
+                textElem.innerText=transcript
+            }
+            function onEnd(){
+                const isRecodering=btnElem.classList.contains('fa-microphone-slash')
+                if(isRecodering){
+                    recognition.start()
+                }
+            }
+            // btnElem.addEventListener('click',function(){
+            //     recognition.start()
+            //     console.log('w')
+            // })
+            function run(){
+                recognition.lang='th-TH'
+                recognition.addEventListener('result',onResult)
+                recognition.addEventListener('end',onEnd)
+                btnElem.addEventListener('click',onClick)
+            }
+            run()
+        })()
+        // Click_to_convert.addEventListener('click',function(){
+        //         var speech=true
+        //         window.SpeechRecognition=window.webkitSpeechRecognition
+        //         const recognition=new SpeechRecognition()
+        //         recognition.interimResults=true;
+
+        //         recognition.addEventListener('result',e=>{
+        //             const transcript=Array.from(e.results)
+        //             .map(result=>result[0])
+        //             .map(result=>result.transcript)
+        //             convert_text.innerHTML=transcript
+        //         })
+
+        //         if(speech==true){
+        //             recognition.start()
+        //         }
+        // })
+
+    </script>
 </body>
 
 </html>

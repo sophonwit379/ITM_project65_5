@@ -19,14 +19,24 @@ def Action(request):
     action=getAll()
     return render(request,'action.html',{'action':action})
 
+def Voice(request):
+    return render(request,'voice.html')
+
 def Search(request):
         # create a form instance and populate it with data from the request:
 
     #if request.method=='POST':
+
     search=request.GET['search']
-    action=find(search)
-    return render(request,'search.html',{'action':action})
+    actions=find(search)
+    action_len=find(search)
+    lens=len(list(action_len))
+    #print(lens)
+    #print(actions)
+    # print(lens)
+    return render(request,'search.html',{'actions':actions,'lens':lens})
     #return render(request,'search.html')
+
 def get_data(request):
     data = getAns()
     return JsonResponse({'data':data})

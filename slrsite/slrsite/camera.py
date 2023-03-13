@@ -21,7 +21,7 @@ def gen():
     sequence = []
     sentence = []
     predictions = []
-    threshold = 0.5
+    threshold = 0.7
 
     cap = cv2.VideoCapture(0)
     # Set mediapipe model 
@@ -50,22 +50,21 @@ def gen():
                 
             #3. Viz logic
                 if np.unique(predictions[-10:])[0]==np.argmax(res): 
-                    if res[np.argmax(res)] > threshold: 
-                        
+                    if res[np.argmax(res)] > threshold and actions[np.argmax(res)]!='ยืน': 
                         if len(sentence) > 0: 
                             if actions[np.argmax(res)] != sentence[-1]:
                                 sentence.append(actions[np.argmax(res)])
                         else:
                             sentence.append(actions[np.argmax(res)])
 
-                if len(sentence) > 5: 
-                    sentence = sentence[-5:]
+                if len(sentence) > 10: 
+                    sentence = sentence[-10:]
 
                 # Viz probabilities
                 #image = prob_viz(res, actions, image, color)
                 
             #cv2.rectangle(image, (0,0), (640, 40), (245, 117, 16), -1)
-            cv2.putText(image, ' '.join(sentence), (3,30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
+            # cv2.putText(image, ' '.join(sentence), (3,30), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2, cv2.LINE_AA)
             setAns(sentence)
             #frame = camera.get_frame()
             frame = cv2.imencode('.jpg', image)[1].tobytes()
@@ -73,9 +72,7 @@ def gen():
                b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
 #model
-actions = np.array(['angry','cry','disklike','easy',
-                    'fine','forgot','full','happy','hard','hello',
-                    'like','love','me','miss','sad','scare','stand','you'])
+actions = np.array(['โกรธ','ร้องให้','ง่าย','สบายดี','ลืม','อิ่ม','ดีใจ','ยาก','สวัสดี','ชอบ','รัก','ฉัน','คิดถึง','เศร้า','กลัว','ยืน','คุณ'])
 
 mp_holistic = mp.solutions.holistic # Holistic model
 mp_drawing = mp.solutions.drawing_utils # Drawing utilities
@@ -124,7 +121,7 @@ model.add(LSTM(64, return_sequences=False, activation='relu'))
 model.add(Dense(64, activation='relu'))
 model.add(Dense(32, activation='relu'))
 model.add(Dense(actions.shape[0], activation='softmax'))
-model.load_weights('action.h5')
+model.load_weights('test.h5')
 
 # color = (245,117,16)
 # def prob_viz(res, actions, input_frame, color):
