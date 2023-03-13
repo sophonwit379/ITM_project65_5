@@ -21,9 +21,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script>
 </head>
 
 <body>
+    
     <div class="navbar">
         <div class="nav_logo">
             <a href="{% url 'index' %}"><img src="{% static 'logo.png' %}" alt=""> </a>
@@ -46,17 +50,19 @@
         </ul>
 
     </div>
-    <div class="section">
+    <div style="background-color: #f5f4ea;">
         {% if lens == 0 %}
-        <h2>ไม่มี</h2>
+        <h1 >ไม่มี</h1>
         {% else %}
         <div class="product">
             {% for i in actions %}
             <div class="content">
                 <div class="card">
-                    <iframe width="320" height="240" src={{i.url}}>
+                    <iframe width="350" height="240" src={{i.url}}>
                     </iframe>
-                    <h>{{i.action}}<h2>
+                    <div>
+                        <h2>{{i.action}}<h2>
+                    </div>
                 </div>
             </div>
             {% endfor %}
@@ -64,6 +70,11 @@
         {% endif %}
     </div>
     <style>
+        h1{
+            text-align: center;
+            margin-top: 400px;
+            font-size: 64px;
+        }
         h3 {
             text-align: center;
             color: black;
@@ -81,7 +92,7 @@
             flex-wrap: wrap;
             width: 100%;
             padding-top: 40px;
-            justify-content: center; */
+            justify-content: center; 
             align-items: center;
             
 
