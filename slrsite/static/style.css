@@ -7,12 +7,14 @@
     font-family: 'Mitr', sans-serif;
     /* overflow-x: hidden; */
 }
-
+body{
+    background-color: #f5f4ea;
+}
 /* <----all-page---> */
 .section {
     height: 100vh;
     width: 100%;
-    background-color: #f5f4ea;
+    /* background-color: #f5f4ea; */
 }
 
 .home {
