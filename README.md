@@ -27,8 +27,8 @@
 [    คลิกเพื่อดาวน์โหลด Dataset](https://drive.google.com/file/d/17-hhCr_5tQIkMToAlevN3njRZiemX1wO/view?usp=share_link)
 
 ## Database
-ในส่วนของ databse เราได้ใช้เป็น MongoDB Atlas ในการเก็บข้อมูลโดยเราจะเก็บเป็นลิ้งวีดีโอที่ได้ upload ลง google drive
-ซึ่งผู้ใช้จะต้องทำการ download MongoDB Compass ก่อนจากนั้นจึง import collection Action.json แล้วค่อย
+ในส่วนของ databse เราได้ใช้เป็น [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register) ในการเก็บข้อมูลโดยเราจะเก็บเป็นลิ้งวีดีโอที่ได้ upload ลง google drive
+ซึ่งผู้ใช้จะต้องทำการ download [MongoDB Compass](https://www.mongodb.com/try/download/compass) ก่อนจากนั้นจึง import collection Action.json แล้วค่อย
 connect กับ MongoDB Atlas ก็สามารถใช้งานได้แล้ว
 
 ## วิธีใช้งานโปรแกรม
