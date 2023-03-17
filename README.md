@@ -8,9 +8,11 @@
 
 ## สารบัญการใช้งาน
  
- - [ติดตั้งโปรแกรมเบื้องต้น](%E0%B8%82%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%95%E0%B8%AD%E0%B8%99%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%95%E0%B8%B4%E0%B8%94%E0%B8%95%E0%B8%B1%E0%B9%89%E0%B8%87%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%81%E0%B8%81%E0%B8%A3%E0%B8%A1%E0%B9%80%E0%B8%9A%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B9%89%E0%B8%99)
- -  [ดาวน์โหลด Database](%E0%B8%94%E0%B8%B2%E0%B8%A7%E0%B8%99%E0%B9%8C%E0%B9%82%E0%B8%AB%E0%B8%A5%E0%B8%94Dataset)
- - [วิธีใช้งานโปรแกรม](%E0%B8%A7%E0%B8%B4%E0%B8%98%E0%B8%B5%E0%B9%83%E0%B8%8A%E0%B9%89%E0%B8%87%E0%B8%B2%E0%B8%99%E0%B9%82%E0%B8%9B%E0%B8%A3%E0%B9%81%E0%B8%81%E0%B8%A3%E0%B8%A1)
+ - [ติดตั้งโปรแกรมเบื้องต้น]
+ - [ดาวน์โหลด Dataset]
+ -  [ดาวน์โหลด Database]
+ - [วิธีใช้งานโปรแกรม]
+ 
 
 ## ขั้นตอนการติดตั้งโปรแกรมเบื้องต้น
 ![enter image description here](https://arcade-pk.readthedocs.io/en/latest/_images/setup_windows_1.png)
@@ -26,7 +28,7 @@
 ## ดาวน์โหลด Dataset
 [    คลิกเพื่อดาวน์โหลด Dataset](https://drive.google.com/file/d/17-hhCr_5tQIkMToAlevN3njRZiemX1wO/view?usp=share_link)
 
-## Database
+## ดาวน์โหลด Database
 ในส่วนของ databse เราได้ใช้เป็น [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/register) ในการเก็บข้อมูลโดยเราจะเก็บเป็นลิ้งวีดีโอที่ได้ upload ลง google drive
 ซึ่งผู้ใช้จะต้องทำการ download [MongoDB Compass](https://www.mongodb.com/try/download/compass) ก่อนจากนั้นจึง import collection Action.json แล้วค่อย
 connect กับ MongoDB Atlas ก็สามารถใช้งานได้แล้ว
