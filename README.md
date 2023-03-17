@@ -26,6 +26,8 @@
 ## ดาวน์โหลด Dataset
 [    คลิกเพื่อดาวน์โหลด Dataset](https://drive.google.com/file/d/17-hhCr_5tQIkMToAlevN3njRZiemX1wO/view?usp=share_link)
 
+## Database
+ในส่วนของ databse เราได้ใช้เป็น MongoDB Atlas ในการเก็บข้อมูลโดยเราจะเก็บเป็นลิ้งวีดีโอที่ได้ upload ลง google drive
 
 ## วิธีใช้งานโปรแกรม
 
