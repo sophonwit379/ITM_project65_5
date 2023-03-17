@@ -34,22 +34,3 @@
 
 ## เครดิต
 Youtube [  Nicholas Renotte](https://www.youtube.com/@NicholasRenotte)
-Image
-Image
-GitHub
-GitHub - sophonwit379/MIT_Sign_Language_Recognition
-Contribute to sophonwit379/MIT_Sign_Language_Recognition development by creating an account on GitHub.
-Google Docs
-dataset.rar
-YouTube
-Nicholas Renotte
-Sup!
-
-Welcome to the channel. So, if you're reading this, you're probably wondering what this is all about and who the hell is this Nicholas Renotte guy.
-
-Right?
-
-Right!
-
-Well, I'm here to share practical ways to get started with data science, machine learning and deep learning using a bunch of different tools but mainly Python and Javascript. ...
-Image
