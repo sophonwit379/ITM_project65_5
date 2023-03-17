@@ -28,6 +28,8 @@
 
 ## Database
 ในส่วนของ databse เราได้ใช้เป็น MongoDB Atlas ในการเก็บข้อมูลโดยเราจะเก็บเป็นลิ้งวีดีโอที่ได้ upload ลง google drive
+ซึ่งผู้ใช้จะต้องทำการ download MongoDB Compass ก่อนจากนั้นจึง import collection Action.json แล้วค่อย
+connect กับ MongoDB Atlas ก็สามารถใช้งานได้แล้ว
 
 ## วิธีใช้งานโปรแกรม
 
